@@ -1,0 +1,59 @@
+name: rules
+
+# The rules every AnyPlay repository shares (see CONTRIBUTING.md). A repository calls it from its
+# own CI:
+#
+#   rules:
+#     uses: anyplay-gg/.github/.github/workflows/rules.yml@main
+#     with:
+#       network: true   # when its crates need anyplay-gg/network beside them
+#
+# It checks Markdown links and title IDs in code, and runs cargo-deny with the repository's
+# deny.toml: licences, security advisories, banned crates and where crates come from.
+
+on:
+  workflow_call:
+    inputs:
+      network:
+        description: Check out anyplay-gg/network beside the repository (path dependencies)
+        type: boolean
+        default: false
+      title-ids:
+        description: Refuse console title IDs in code (off for a launcher, which handles them as data)
+        type: boolean
+        default: true
+      network-ref:
+        description: The anyplay-gg/network revision to check out
+        type: string
+        default: main
+
+permissions:
+  contents: read
+
+jobs:
+  rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          path: repo
+      - uses: actions/checkout@v7.0.1
+        if: inputs.network
+        with:
+          repository: anyplay-gg/network
+          ref: ${{ inputs.network-ref }}
+          path: network
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: anyplay-gg/.github
+          path: shared
+          sparse-checkout: scripts
+      - name: Links and title IDs
+        run: node shared/scripts/rules.mjs repo ${{ !inputs.title-ids && '--no-title-ids' || '' }}
+      - name: Licences, advisories and sources
+        if: hashFiles('repo/deny.toml') != ''
+        uses: EmbarkStudios/cargo-deny-action@v2.1.1
+        with:
+          manifest-path: repo/Cargo.toml
+          arguments: --all-features
+          command: check

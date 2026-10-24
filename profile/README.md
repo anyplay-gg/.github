@@ -7,8 +7,8 @@ AnyPS5 turns PS5 game executables into native Windows and Linux programs. Its te
 | Project | What it is | Status |
 |---|---|---|
 | [launcher](https://github.com/anyplay-gg/launcher) | Finds your game dumps, unlocks them with AnyPS5 and starts them. Keeps controls, saves and trophies per game. Windows and Linux. | Released |
-| [network](https://github.com/anyplay-gg/network) | Online play over the internet: accounts, friends, sessions, invitations and encrypted connections between players. | In design |
-| [cloud](https://github.com/anyplay-gg/cloud) | The central services of the network. Anyone can host their own. | Planned |
+| [network](https://github.com/anyplay-gg/network) | Online play over the internet: accounts, friends, sessions, invitations and encrypted connections between players. | In development |
+| [cloud](https://github.com/anyplay-gg/cloud) | The central services of the network. AnyPlay runs the main one; anyone can host their own. | In development |
 
 ## Ground rules
 

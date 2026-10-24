@@ -1,9 +1,41 @@
 # Contributing to AnyPlay
 
+These rules hold in every AnyPlay repository. A repository can add its own `CONTRIBUTING.md` with more; that file then applies there too.
+
+## How to work
+
 - Open an issue before larger changes.
-- Write issues, commits and pull requests in English. Keep commits small and topical.
+- Write issues, commits and pull requests in English. Keep commits small and topical, and one topic per pull request.
 - In Rust repositories, run `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets -- -D warnings` and `cargo test --workspace` before you open a pull request.
-- Never add game files, keys, firmware, or anything taken from Sony's SDK or servers. Network formats come only from observing games you own; see the [clean line](https://github.com/anyplay-gg/network/blob/main/docs/adr/0003-the-clean-line.md).
 - Your contribution is released under the license of the repository you contribute to.
 
-A repository can add its own `CONTRIBUTING.md` with more rules; that file then applies there.
+## The clean line
+
+The network only lasts if no rights holder has a reason to stop it ([ADR 0003](https://github.com/anyplay-gg/network/blob/main/docs/adr/0003-the-clean-line.md)).
+
+- Never add game files, keys, firmware, or anything taken from Sony's SDK or servers. Nothing contacts Sony's servers or stands in for a publisher's.
+- Network formats come only from observing games you own, written down as our own specifications before any code ([how games are observed](https://github.com/anyplay-gg/network/blob/main/docs/OBSERVING.md)).
+- No platform trademarks in our names.
+
+## Behaviour
+
+- **Never a made-up success.** What is not known is refused or answered as offline, never with a guess that happens to work for one game.
+- **General behaviour.** Code implements an API for every game, not a fix for one title. In the network and the bridge, title IDs appear in specifications, tests and pull requests, never in code; a launcher keeps what it knows per title in data files.
+- **Known gaps are written down** where the repository keeps them (the network's [docs/gaps.md](https://github.com/anyplay-gg/network/blob/main/docs/gaps.md)), not left in comments.
+- **Numbers, not impressions.** A claim about speed comes with measurements from the same machines, such as `anyplay-probe` for the network.
+
+## Tests
+
+- Tests are hermetic: they start their own servers on loopback and never need the internet or a game.
+- A test finishes in seconds. Split one that gets slow instead of raising its timeout.
+- A test checks behaviour, not only that something exists.
+
+## Dependencies
+
+- Every dependency must suit the license of the repository: `cargo-deny` checks it with the repository's `deny.toml`, together with security advisories and where crates come from. The launcher is GPL-2.0-only, so a crate offered only under Apache-2.0 does not fit; an exception in `deny.toml` names the crate and why.
+- An advisory that does not apply is listed in `deny.toml` with the reason, and the update that removes it is planned.
+
+## Documentation
+
+- Words come from the repository's `CONTEXT.md`; decisions go in `docs/adr`; interfaces in `spec/` or the design.
+- Relative links in Markdown must lead somewhere. CI checks them, together with the other shared rules ([rules workflow](.github/workflows/rules.yml)).
