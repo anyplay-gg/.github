@@ -11,11 +11,12 @@ These rules hold in every AnyPlay repository. A repository can add its own `CONT
 - In Rust repositories, run `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets -- -D warnings` and `cargo test --workspace` before you open a pull request.
 - Your contribution is released under the license of the repository you contribute to.
 
-## The clean line
+## The line
 
-The network only lasts if no rights holder has a reason to stop it ([ADR 0003](https://github.com/anyplay-gg/network/blob/main/docs/adr/0003-the-clean-line.md)).
+The network goes as far as the law allows and no further ([ADR 0021](https://github.com/anyplay-gg/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md)).
 
-- Never add game files, keys, firmware, or anything taken from Sony's SDK or servers. Nothing contacts Sony's servers or stands in for a publisher's.
+- Never add game files, keys, firmware, or anything taken from Sony's SDK or servers. Nothing contacts Sony's servers.
+- Nothing issues, forges or forwards platform or publisher tokens, poses as a real console, stands in for a publisher service that still runs, or bypasses anti-cheat or copy protection. A revival server is only for a service the publisher has shut down, and it is written from observation, never from the publisher's code or keys.
 - Network formats come only from observing games you own, written down as our own specifications before any code ([how games are observed](https://github.com/anyplay-gg/network/blob/main/docs/OBSERVING.md)).
 - No platform trademarks in our names.
 

@@ -63,12 +63,12 @@ Game traffic goes from player to player. The cloud never sees it.
 These rules are why the network can last. They are in every repository's contributing rules.
 
 - We never connect to Sony's servers and never use Sony's code, keys or leaked documents.
-- We don't stand in for a publisher's servers, and we don't bypass anti-cheat or account checks.
+- We don't stand in for a publisher service that still runs, we don't issue tokens for anyone else's client, and we don't bypass anti-cheat or copy protection. We may bring back online play for a game whose publisher has shut its servers down, with a server we write from observation.
 - Only games you own. Nothing here ships or downloads game files.
 - AnyPS5 is a compatibility layer, not an emulator. We keep it that way.
-- Network formats come from observing games you own and are written down as our own specifications. A game whose online part needs its publisher's servers stays offline.
+- Network formats come from observing games you own and are written down as our own specifications. A game whose online play runs on a live publisher service stays offline on the PlayStation side.
 
-The reasons are in [the clean line](https://github.com/anyplay-gg/network/blob/main/docs/adr/0003-the-clean-line.md).
+The reasons are in [the line is drawn at the law](https://github.com/anyplay-gg/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md).
 
 ## Contribute
 

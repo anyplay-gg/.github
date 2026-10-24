@@ -7,7 +7,7 @@
 <!-- The rules: https://github.com/anyplay-gg/.github/blob/main/CONTRIBUTING.md -->
 - [ ] One topic; follow-ups go in a new pull request
 - [ ] Format, Clippy and tests pass (Rust repositories)
-- [ ] The clean line holds: nothing from Sony, no game files, formats only from observing games we own
+- [ ] The line holds ([ADR 0021](https://github.com/anyplay-gg/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md)): nothing from Sony, no game files, no tokens for others, no stand-in for a running publisher service, formats only from observing games we own
 - [ ] No made-up success, no fix for one title
 - [ ] Docs, specifications and the glossary say what changed
 - [ ] Depends on: <!-- #PR in any AnyPlay repository, or none -->
