@@ -4,7 +4,7 @@ These rules hold in every AnyPlay repository. A repository can add its own `CONT
 
 ## How to work
 
-- Open an issue before larger changes.
+- Open an issue before larger changes. Questions and early ideas are welcome on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS).
 - Write issues, commits and pull requests in English. Keep commits small and topical, and one topic per pull request.
 - In Rust repositories, run `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets -- -D warnings` and `cargo test --workspace` before you open a pull request.
 - Your contribution is released under the license of the repository you contribute to.
