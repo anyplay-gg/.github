@@ -2,6 +2,8 @@
 
 These rules hold in every AnyPlay repository. A repository can add its own `CONTRIBUTING.md` with more; that file then applies there too.
 
+> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
+
 ## How to work
 
 - Open an issue before larger changes. Questions and early ideas are welcome on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS).
