@@ -72,6 +72,8 @@ The reasons are in [the clean line](https://github.com/anyplay-gg/network/blob/m
 
 ## Contribute
 
+> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
+
 Open an issue before larger changes. Write in English, keep commits small and run formatting, Clippy and the tests before a pull request. The shared rules are in [CONTRIBUTING.md](https://github.com/anyplay-gg/.github/blob/main/CONTRIBUTING.md); each repository can add its own. Report security problems privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
 
 Recommended settings and key layouts for games are data files in the launcher repository, and an entry needs a title ID, the toolkit version you tried it on and a link as evidence.
