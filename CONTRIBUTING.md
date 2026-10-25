@@ -23,7 +23,7 @@ The network goes as far as the law allows and no further ([ADR 0021](https://git
 ## Behaviour
 
 - **Never a made-up success.** What is not known is refused or answered as offline, never with a guess that happens to work for one game.
-- **General behaviour.** Code implements an API for every game, not a fix for one title. In the network and the bridge, title IDs appear in specifications, tests and pull requests, never in code. A launcher keeps what it knows per title in data files.
+- **General behaviour.** Nothing is built around one game: protocol answers, engine changes and features work for every game, and a game is only the test case that shows what they must handle. Code implements an API for every game, not a fix for one title. In the network and the bridge, title IDs appear in specifications, tests and pull requests, never in code. A launcher keeps what it knows per title in data files.
 - **Known gaps are written down** where the repository keeps them (the network's [docs/gaps.md](https://github.com/anyplaynet/network/blob/main/docs/gaps.md)), not left in comments.
 - **Numbers, not impressions.** A claim about speed comes with measurements from the same machines, such as `anyplay-probe` for the network.
 
