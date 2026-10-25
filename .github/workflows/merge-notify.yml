@@ -1,0 +1,71 @@
+name: merge-notify
+
+# Posts to Discord what reached main: the merged pull request (title, number, author, link), or
+# the commits of a push that came without one. A repository calls it on every push to main:
+#
+#   on:
+#     push:
+#       branches: [main]
+#   jobs:
+#     notify:
+#       uses: anyplaynet/.github/.github/workflows/merge-notify.yml@main
+#       secrets:
+#         webhook: ${{ secrets.DISCORD_MERGES_WEBHOOK }}
+#
+# The webhook is the organisation secret DISCORD_MERGES_WEBHOOK, a plain Discord webhook URL (no
+# trailing /github). Without it nothing is posted, and a failed post fails only this run.
+
+on:
+  workflow_call:
+    secrets:
+      webhook:
+        description: The Discord webhook URL
+        required: false
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to Discord
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WEBHOOK: ${{ secrets.webhook }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          COMPARE: ${{ github.event.compare }}
+          PUSHER: ${{ github.event.pusher.name }}
+          COMMITS: ${{ toJSON(github.event.commits) }}
+        run: |
+          if [ -z "$WEBHOOK" ]; then echo "no DISCORD_MERGES_WEBHOOK secret, nothing posted"; exit 0; fi
+          # The pull request the head commit was merged from, when there is one.
+          pr=$(gh api "repos/$REPO/commits/$SHA/pulls" --jq '[.[] | select(.merged_at != null)][0] // empty')
+          if [ -n "$pr" ]; then
+            payload=$(jq -n --arg repo "$REPO" --argjson pr "$pr" '{
+              username: "AnyPlay",
+              embeds: [{
+                title: ("[\($repo)] #\($pr.number) \($pr.title)" | .[0:256]),
+                url: $pr.html_url,
+                description: (($pr.body // "") | .[0:1000]),
+                color: 5763719,
+                author: {name: $pr.user.login, icon_url: $pr.user.avatar_url, url: $pr.user.html_url},
+                footer: {text: "merged into main"},
+                timestamp: $pr.merged_at
+              }]
+            }')
+          else
+            payload=$(jq -n --arg repo "$REPO" --arg url "$COMPARE" --arg pusher "$PUSHER" --argjson commits "$COMMITS" '{
+              username: "AnyPlay",
+              embeds: [{
+                title: ("[\($repo)] \($commits | length) commit(s) pushed to main" | .[0:256]),
+                url: $url,
+                description: ([$commits[] | "[`\(.id[0:7])`](\(.url)) \(.message | split("\n")[0])"] | join("\n") | .[0:4000]),
+                color: 3447003,
+                author: {name: $pusher}
+              }]
+            }')
+          fi
+          curl --fail-with-body -sS -H "Content-Type: application/json" -d "$payload" "$WEBHOOK"
