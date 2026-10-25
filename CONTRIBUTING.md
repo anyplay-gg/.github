@@ -2,7 +2,7 @@
 
 These rules hold in every AnyPlay repository. A repository can add its own `CONTRIBUTING.md` with more; that file then applies there too.
 
-> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
+> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplaynet/.github/blob/main/SECURITY.md) describes.
 
 ## How to work
 
@@ -13,18 +13,18 @@ These rules hold in every AnyPlay repository. A repository can add its own `CONT
 
 ## The line
 
-The network goes as far as the law allows and no further ([ADR 0021](https://github.com/anyplay-gg/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md)).
+The network goes as far as the law allows and no further ([ADR 0021](https://github.com/anyplaynet/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md)).
 
 - Never add game files, keys, firmware, or anything taken from Sony's SDK or servers. Nothing contacts Sony's servers.
 - Nothing issues, forges or forwards platform or publisher tokens, poses as a real console, stands in for a publisher service that still runs, or bypasses anti-cheat or copy protection. A revival server is only for a service the publisher has shut down, and it is written from observation, never from the publisher's code or keys.
-- Network formats come only from observing games you own, written down as our own specifications before any code ([how games are observed](https://github.com/anyplay-gg/network/blob/main/docs/OBSERVING.md)).
+- Network formats come only from observing games you own, written down as our own specifications before any code ([how games are observed](https://github.com/anyplaynet/network/blob/main/docs/OBSERVING.md)).
 - No platform trademarks in our names.
 
 ## Behaviour
 
 - **Never a made-up success.** What is not known is refused or answered as offline, never with a guess that happens to work for one game.
 - **General behaviour.** Code implements an API for every game, not a fix for one title. In the network and the bridge, title IDs appear in specifications, tests and pull requests, never in code; a launcher keeps what it knows per title in data files.
-- **Known gaps are written down** where the repository keeps them (the network's [docs/gaps.md](https://github.com/anyplay-gg/network/blob/main/docs/gaps.md)), not left in comments.
+- **Known gaps are written down** where the repository keeps them (the network's [docs/gaps.md](https://github.com/anyplaynet/network/blob/main/docs/gaps.md)), not left in comments.
 - **Numbers, not impressions.** A claim about speed comes with measurements from the same machines, such as `anyplay-probe` for the network.
 
 ## Tests
