@@ -10,11 +10,11 @@ Talk with the team and other players on the [AnyPlay Discord](https://discord.gg
 
 | Project | What it is | License | State |
 |---|---|---|---|
-| [launcher](https://github.com/anyplay-gg/launcher) | Finds your game dumps, unlocks them for AnyPS5 and starts them. Keeps controls, saves and trophies per game. Rust, Windows and Linux. | GPL-2.0 | Released. The online area is on `main` and not in a release yet. |
-| [network](https://github.com/anyplay-gg/network) | Online play over the internet: accounts, friends, sessions, invitations and encrypted connections between players. Holds the net service, the protocols and the specifications. | MIT or Apache-2.0 | In development. The parts run and are tested with fake games; no real game plays online yet. |
-| [cloud](https://github.com/anyplay-gg/cloud) | The central services of the network and the relays. One program runs a whole cloud with `docker compose up`. | AGPL-3.0 | Version 0. Works end to end in tests; no public cloud runs yet. |
+| [launcher](https://github.com/anyplaynet/launcher) | Finds your game dumps, unlocks them for AnyPS5 and starts them. Keeps controls, saves and trophies per game. Rust, Windows and Linux. | GPL-2.0 | Released. The online area is on `main` and not in a release yet. |
+| [network](https://github.com/anyplaynet/network) | Online play over the internet: accounts, friends, sessions, invitations and encrypted connections between players. Holds the net service, the protocols and the specifications. | MIT or Apache-2.0 | In development. The parts run and are tested with fake games; no real game plays online yet. |
+| [cloud](https://github.com/anyplaynet/cloud) | The central services of the network and the relays. One program runs a whole cloud with `docker compose up`. | AGPL-3.0 | Version 0. Works end to end in tests; no public cloud runs yet. |
 
-AnyPlay also keeps a fork of AnyPS5, [anyplay-gg/AnyPS5](https://github.com/anyplay-gg/AnyPS5), for the network bridge.
+AnyPlay also keeps a fork of AnyPS5, [anyplaynet/AnyPS5](https://github.com/anyplaynet/AnyPS5), for the network bridge.
 
 ## How the parts fit
 
@@ -54,9 +54,9 @@ Game traffic goes from player to player. The cloud never sees it.
 **Next:**
 
 - Measure the tunnel between two real networks, then review and merge the bridge.
-- Run a public cloud, and learn the formats of games one by one from games you own. [Known gaps](https://github.com/anyplay-gg/network/blob/main/docs/gaps.md) lists what is missing.
-- The **social layer**: profiles and trophies, parties and messages, voice, a feed and boards, and sharing a game with a friend. It is specified in the [network's social design](https://github.com/anyplay-gg/network/blob/main/docs/SOCIAL.md) and not built yet.
-- The **cluster cloud**: the same program on many nodes with PostgreSQL and NATS. The single-node shape is built; the road to a cluster is in the [cloud architecture](https://github.com/anyplay-gg/cloud/blob/main/docs/ARCHITECTURE.md).
+- Run a public cloud, and learn the formats of games one by one from games you own. [Known gaps](https://github.com/anyplaynet/network/blob/main/docs/gaps.md) lists what is missing.
+- The **social layer**: profiles and trophies, parties and messages, voice, a feed and boards, and sharing a game with a friend. It is specified in the [network's social design](https://github.com/anyplaynet/network/blob/main/docs/SOCIAL.md) and not built yet.
+- The **cluster cloud**: the same program on many nodes with PostgreSQL and NATS. The single-node shape is built; the road to a cluster is in the [cloud architecture](https://github.com/anyplaynet/cloud/blob/main/docs/ARCHITECTURE.md).
 
 ## Ground rules
 
@@ -68,13 +68,13 @@ These rules are why the network can last. They are in every repository's contrib
 - AnyPS5 is a compatibility layer, not an emulator. We keep it that way.
 - Network formats come from observing games you own and are written down as our own specifications. A game whose online play runs on a live publisher service stays offline on the PlayStation side.
 
-The reasons are in [the line is drawn at the law](https://github.com/anyplay-gg/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md).
+The reasons are in [the line is drawn at the law](https://github.com/anyplaynet/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md).
 
 ## Contribute
 
-> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
+> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplaynet/.github/blob/main/SECURITY.md) describes.
 
-Open an issue before larger changes. Write in English, keep commits small and run formatting, Clippy and the tests before a pull request. The shared rules are in [CONTRIBUTING.md](https://github.com/anyplay-gg/.github/blob/main/CONTRIBUTING.md); each repository can add its own. Report security problems privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
+Open an issue before larger changes. Write in English, keep commits small and run formatting, Clippy and the tests before a pull request. The shared rules are in [CONTRIBUTING.md](https://github.com/anyplaynet/.github/blob/main/CONTRIBUTING.md); each repository can add its own. Report security problems privately, as [SECURITY.md](https://github.com/anyplaynet/.github/blob/main/SECURITY.md) describes.
 
 Recommended settings and key layouts for games are data files in the launcher repository, and an entry needs a title ID, the toolkit version you tried it on and a link as evidence.
 

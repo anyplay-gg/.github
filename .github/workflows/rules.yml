@@ -4,9 +4,9 @@ name: rules
 # own CI:
 #
 #   rules:
-#     uses: anyplay-gg/.github/.github/workflows/rules.yml@main
+#     uses: anyplaynet/.github/.github/workflows/rules.yml@main
 #     with:
-#       network: true   # when its crates need anyplay-gg/network beside them
+#       network: true   # when its crates need anyplaynet/network beside them
 #
 # It checks Markdown links and title IDs in code, and runs cargo-deny with the repository's
 # deny.toml: licences, security advisories, banned crates and where crates come from.
@@ -15,7 +15,7 @@ on:
   workflow_call:
     inputs:
       network:
-        description: Check out anyplay-gg/network beside the repository (path dependencies)
+        description: Check out anyplaynet/network beside the repository (path dependencies)
         type: boolean
         default: false
       title-ids:
@@ -23,7 +23,7 @@ on:
         type: boolean
         default: true
       network-ref:
-        description: The anyplay-gg/network revision to check out
+        description: The anyplaynet/network revision to check out
         type: string
         default: main
 
@@ -40,12 +40,12 @@ jobs:
       - uses: actions/checkout@v7.0.1
         if: inputs.network
         with:
-          repository: anyplay-gg/network
+          repository: anyplaynet/network
           ref: ${{ inputs.network-ref }}
           path: network
       - uses: actions/checkout@v7.0.1
         with:
-          repository: anyplay-gg/.github
+          repository: anyplaynet/.github
           path: shared
           sparse-checkout: scripts
       - name: Links and title IDs
