@@ -59,7 +59,7 @@ for (const path of files(root)) {
 
 if (problems.length) {
   console.error(problems.join("\n"));
-  console.error(`\n${problems.length} problem(s). See https://github.com/anyplay-gg/.github/blob/main/CONTRIBUTING.md`);
+  console.error(`\n${problems.length} problem(s). See https://github.com/anyplaynet/.github/blob/main/CONTRIBUTING.md`);
   process.exit(1);
 }
 console.log(checkTitleIds ? "rules: links resolve, no title IDs in code" : "rules: links resolve");
