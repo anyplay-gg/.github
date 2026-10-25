@@ -4,7 +4,7 @@ Everything around [AnyPS5](https://github.com/boykopovar/AnyPS5) that players ne
 
 AnyPS5 turns PS5 game executables into native Windows and Linux programs. Its team works on the core: system libraries, the GPU and shaders. AnyPlay builds the rest, so that a player can unlock a game, set it up, start it and, later, play it with friends over the internet without opening a port.
 
-Talk with the team and other players on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS).
+Talk with the team and other players on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh).
 
 ## Projects
 
@@ -72,7 +72,7 @@ The reasons are in [the line is drawn at the law](https://github.com/anyplay-gg/
 
 ## Contribute
 
-> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/nSHbHBRdS) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
+> **Until the first live version of the network, only the AnyPlay team opens issues and pull requests.** Ideas, questions and bug reports are welcome on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh) meanwhile. Security problems still go privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
 
 Open an issue before larger changes. Write in English, keep commits small and run formatting, Clippy and the tests before a pull request. The shared rules are in [CONTRIBUTING.md](https://github.com/anyplay-gg/.github/blob/main/CONTRIBUTING.md); each repository can add its own. Report security problems privately, as [SECURITY.md](https://github.com/anyplay-gg/.github/blob/main/SECURITY.md) describes.
 
