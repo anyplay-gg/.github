@@ -2,14 +2,14 @@
 
 These rules hold in every AnyPlay repository. A repository can add its own `CONTRIBUTING.md`; that file then applies there too.
 
-> **Issues and pull requests are open in [launcher](https://github.com/anyplaynet/launcher) and [network](https://github.com/anyplaynet/network).** The other repositories open later: `cloud`, `web` and the AnyPS5 fork. Until a repository opens, only the AnyPlay team opens issues and pull requests there. Questions and ideas are also welcome on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh). Security problems go privately, as [SECURITY.md](SECURITY.md) describes. Everyone who takes part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+> **Issues and pull requests are open in [launcher](https://github.com/anyplaynet/launcher) and [network](https://github.com/anyplaynet/network).** A maintainer approves CI runs for first-time contributors. The other repositories (`cloud`, `web`, the AnyPS5 fork and this one) are limited to the AnyPlay team until 2027-04-25. Questions and ideas are welcome on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh). Security problems go privately, as [SECURITY.md](SECURITY.md) describes. Everyone who takes part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## How to contribute
 
 - **Small fixes** (a typo, a wrong link, a one-line bug): open a pull request.
 - **Anything bigger:** open an issue first and say what you want to change and why. We answer before you spend days on it, and some changes belong in another repository or need a decision first. A new feature, a change to a specification and a new dependency all count as bigger.
 - **Bugs and game reports:** use the issue forms in the repository. A report that says what you did, what you expected and what happened is the most useful thing you can send.
-- **A pull request** needs one review and green CI before it is merged. Keep it to one topic, with small commits.
+- **A pull request** needs one review and green CI before it is merged. For a first-time contributor, a maintainer must approve the CI run. Keep it to one topic, with small commits.
 - **Licence:** your contribution is released under the licence of the repository you contribute to, and you give it under that licence and no other. Inbound is outbound; there is no separate agreement to sign. The launcher is GPL-2.0-only, the network is MIT or Apache-2.0 at the user's option, and the cloud and the web are AGPL-3.0. Each repository has its `LICENSE` file.
 - Write issues, commits and pull requests in English.
 - Each repository can add its own `CONTRIBUTING.md` with how to build and test it; that file applies there too.

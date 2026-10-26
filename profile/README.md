@@ -1,44 +1,53 @@
-# AnyPlay
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anyplaynet/.github/main/profile/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/anyplaynet/.github/main/profile/banner-light.svg">
+  <img alt="AnyPlay. Everything around AnyPS5 that players need." src="https://raw.githubusercontent.com/anyplaynet/.github/main/profile/banner-dark.svg" width="100%">
+</picture>
 
-Everything around [AnyPS5](https://github.com/boykopovar/AnyPS5) that players need: a launcher for your games, and an online network to play them with friends over the internet, without opening a port.
+AnyPlay builds the launcher and the online network around [AnyPS5](https://github.com/boykopovar/AnyPS5), so you can set up your own games, start them and play with friends over the internet.
 
-AnyPS5 turns console game executables into native Windows and Linux programs. Its team works on the core: system libraries, the GPU and shaders. AnyPlay builds the rest, so a player can unlock a game, set it up, start it and, later, play it online.
+**[Website](https://anyplaynet.com)** · **[Download the launcher](https://github.com/anyplaynet/launcher/releases/latest)** · **[Discord](https://discord.gg/9zYqf8fEsh)**
 
-## Get it
+## What you can do today
 
-**[Download the AnyPlay Launcher](https://github.com/anyplaynet/launcher/releases/latest)** for Windows or Linux, then create an account at [anyplaynet.com](https://anyplaynet.com). You need your own game dumps.
+[AnyPlay Launcher 0.3.2](https://github.com/anyplaynet/launcher/releases/latest) runs on Windows, Linux and macOS (Apple silicon), in English, Turkish and German.
 
-Talk with the team and other players on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh).
+- Keep a library of your own game dumps, with compatibility per game, search, filters and storage.
+- Track trophies, play time, captures and clips in the Game Hub.
+- Remap controllers, or use your phone as one.
+- Go online: friends, messages, parties with voice, Find Players, shared captures, screen sharing and live broadcast.
+- Play on a Steam Deck, or add games to Steam.
 
-## Projects
+The cloud is live at [anyplaynet.com](https://anyplaynet.com). The bridge that carries a game's own online calls to the network is still in development, so games do not play online over the internet yet. The [roadmap](https://github.com/anyplaynet/network/blob/main/docs/DESIGN.md#roadmap) has the phases.
 
-| Project | What it is | License |
+## Repositories
+
+| Repository | What it is | License |
 |---|---|---|
-| [launcher](https://github.com/anyplaynet/launcher) | Finds your game dumps, unlocks them for AnyPS5 and starts them. Controls, saves and trophies per game, and the online area. Rust. | GPL-2.0 |
-| [network](https://github.com/anyplaynet/network) | Online play: the net service, the bridge protocol, the specifications and the design. | MIT or Apache-2.0 |
-| [cloud](https://github.com/anyplaynet/cloud) | The services behind the network, and the relays. `docker compose up` runs one. | AGPL-3.0 |
-| [web](https://github.com/anyplaynet/web) | The website and account pages at anyplaynet.com. | AGPL-3.0 |
-| [AnyPS5](https://github.com/anyplaynet/AnyPS5) | Our fork of AnyPS5 with the network bridge. | GPL-2.0 |
+| [launcher](https://github.com/anyplaynet/launcher) | The AnyPlay Launcher and its online area. Rust. | GPL-2.0 |
+| [network](https://github.com/anyplaynet/network) | The design, specifications and bridge protocol for online play. | MIT or Apache-2.0 |
+| [cloud](https://github.com/anyplaynet/cloud) | Accounts, friends, sessions and relays. | AGPL-3.0 |
+| [web](https://github.com/anyplaynet/web) | The website and account pages. | AGPL-3.0 |
+| [AnyPS5](https://github.com/anyplaynet/AnyPS5) | Our fork of [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5) with the network bridge. | GPL-2.0 |
 
-## Status
+## Get the launcher
 
-The launcher is released. The cloud runs at anyplaynet.com. The online area has accounts, friends, parties with voice and calls, profiles, a feed and join codes, and it is tested end to end with fake games. No real game plays online yet: the bridge that connects a game to the network is under review in AnyPS5. [Known gaps](https://github.com/anyplaynet/network/blob/main/docs/gaps.md) lists what is missing.
+1. Download it from the [latest release](https://github.com/anyplaynet/launcher/releases/latest). Linux comes as AppImage, tar.gz and Flatpak.
+2. Create an account at [anyplaynet.com](https://anyplaynet.com) with a passkey or an e-mail code.
+3. Add your own game dumps. Nothing here ships or downloads game files.
 
-## How the parts fit
+The launcher updates itself. Flatpak and AUR installs update through the package manager.
 
-The **launcher** starts games and runs the **net service** on your PC. In a game, the **bridge** inside AnyPS5 hands the game's online calls to the net service. The net service carries game traffic straight to other players through encrypted tunnels, over **relays** when a direct path fails. The **cloud** keeps accounts, friends and sessions, and signs the tickets relays check. It never sees game traffic. A diagram is in the [network README](https://github.com/anyplaynet/network#readme).
+## Community
 
-## Ground rules
+Ask questions, share ideas and meet other players on the [AnyPlay Discord](https://discord.gg/9zYqf8fEsh).
 
-- Only games you own. Nothing here ships or downloads game files.
-- We never use a platform holder's servers, code, keys or leaked documents.
-- We never stand in for a publisher service that still runs, issue tokens for anyone else's client, or bypass anti-cheat or copy protection. Online play can return for a game whose publisher has shut its servers down, with a server written from observation.
-- AnyPS5 is a compatibility layer, not an emulator.
+## Contributing
 
-The reasons are in [the line is drawn at the law](https://github.com/anyplaynet/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md).
+[launcher](https://github.com/anyplaynet/launcher) and [network](https://github.com/anyplaynet/network) take outside issues and pull requests; a maintainer approves CI runs for first-time contributors. The other repositories are limited to the team until 2027-04-25. For anything bigger than a small fix, open an issue first. Read [CONTRIBUTING.md](https://github.com/anyplaynet/.github/blob/main/CONTRIBUTING.md) and the [Code of Conduct](https://github.com/anyplaynet/.github/blob/main/CODE_OF_CONDUCT.md). Report security problems privately, as [SECURITY.md](https://github.com/anyplaynet/.github/blob/main/SECURITY.md) describes.
 
-## Contribute
+## The line
 
-Issues and pull requests are open in [launcher](https://github.com/anyplaynet/launcher) and [network](https://github.com/anyplaynet/network); `cloud`, `web` and the AnyPS5 fork open later. For anything bigger than a small fix, open an issue first. Ideas and questions are welcome on [Discord](https://discord.gg/9zYqf8fEsh). The shared rules are in [CONTRIBUTING.md](https://github.com/anyplaynet/.github/blob/main/CONTRIBUTING.md), the [Code of Conduct](https://github.com/anyplaynet/.github/blob/main/CODE_OF_CONDUCT.md) applies everywhere, and security problems go privately, as [SECURITY.md](https://github.com/anyplaynet/.github/blob/main/SECURITY.md) describes.
+We go as far as the law allows: only games you own, nothing from a platform holder's servers, code or keys, and no bypassing of anti-cheat or copy protection. The reasons are in [ADR 0021](https://github.com/anyplaynet/network/blob/main/docs/adr/0021-the-line-is-drawn-at-the-law.md). AnyPS5 is a compatibility layer, not an emulator.
 
-AnyPlay is a community project, not affiliated with the AnyPS5 maintainers or any platform holder.
+<sub>AnyPlay is a community project, not affiliated with the AnyPS5 maintainers or any platform holder.</sub>
