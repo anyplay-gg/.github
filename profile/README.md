@@ -39,6 +39,6 @@ The reasons are in [the line is drawn at the law](https://github.com/anyplaynet/
 
 ## Contribute
 
-Until the first live version of the network, only the AnyPlay team opens issues and pull requests. Ideas, questions and bug reports are welcome on [Discord](https://discord.gg/9zYqf8fEsh). The shared rules are in [CONTRIBUTING.md](https://github.com/anyplaynet/.github/blob/main/CONTRIBUTING.md); report security problems privately, as [SECURITY.md](https://github.com/anyplaynet/.github/blob/main/SECURITY.md) describes.
+Issues and pull requests are open in [launcher](https://github.com/anyplaynet/launcher) and [network](https://github.com/anyplaynet/network); `cloud`, `web` and the AnyPS5 fork open later. For anything bigger than a small fix, open an issue first. Ideas and questions are welcome on [Discord](https://discord.gg/9zYqf8fEsh). The shared rules are in [CONTRIBUTING.md](https://github.com/anyplaynet/.github/blob/main/CONTRIBUTING.md), the [Code of Conduct](https://github.com/anyplaynet/.github/blob/main/CODE_OF_CONDUCT.md) applies everywhere, and security problems go privately, as [SECURITY.md](https://github.com/anyplaynet/.github/blob/main/SECURITY.md) describes.
 
 AnyPlay is a community project, not affiliated with the AnyPS5 maintainers or any platform holder.
