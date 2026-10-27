@@ -10,13 +10,14 @@ AnyPlay builds the launcher and the online network around [AnyPS5](https://githu
 
 ## What you can do today
 
-[AnyPlay Launcher 0.3.2](https://github.com/anyplaynet/launcher/releases/latest) runs on Windows, Linux and macOS (Apple silicon), in English, Turkish and German.
+The [AnyPlay Launcher](https://github.com/anyplaynet/launcher/releases/latest) runs on Windows, Linux and macOS (Apple silicon), in English, Turkish, German, Spanish, French and Brazilian Portuguese.
 
 - Keep a library of your own game dumps, with compatibility per game, search, filters and storage.
 - Track trophies, play time, captures and clips in the Game Hub.
 - Remap controllers, or use your phone as one.
-- Go online: friends, messages, parties with voice, Find Players, shared captures, screen sharing and live broadcast.
+- Go online: friends, messages, parties with voice, Find Players, shared captures, screen sharing, live broadcast and a private list of people you played with recently.
 - Play on a Steam Deck, or add games to Steam.
+- Pick a look: six themes, some of them animated.
 
 The cloud is live at [anyplaynet.com](https://anyplaynet.com). The bridge that carries a game's own online calls to the network is still in development, so games do not play online over the internet yet. The [roadmap](https://github.com/anyplaynet/network/blob/main/docs/DESIGN.md#roadmap) has the phases.
 
@@ -26,13 +27,13 @@ The cloud is live at [anyplaynet.com](https://anyplaynet.com). The bridge that c
 |---|---|---|
 | [launcher](https://github.com/anyplaynet/launcher) | The AnyPlay Launcher and its online area. Rust. | GPL-2.0 |
 | [network](https://github.com/anyplaynet/network) | The design, specifications and bridge protocol for online play. | MIT or Apache-2.0 |
-| [cloud](https://github.com/anyplaynet/cloud) | Accounts, friends, sessions and relays. | AGPL-3.0 |
+| [cloud](https://github.com/anyplaynet/cloud) | Accounts, friends, messages, sessions and relays. Runs at anyplaynet.com. | AGPL-3.0 |
 | [web](https://github.com/anyplaynet/web) | The website and account pages. | AGPL-3.0 |
-| [AnyPS5](https://github.com/anyplaynet/AnyPS5) | Our fork of [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5) with the network bridge. | GPL-2.0 |
+| [AnyPS5](https://github.com/anyplaynet/AnyPS5) | Our fork of [boykopovar/AnyPS5](https://github.com/boykopovar/AnyPS5), kept in sync with upstream, with the network bridge. Nightly pre-releases. | GPL-2.0 |
 
 ## Get the launcher
 
-1. Download it from the [latest release](https://github.com/anyplaynet/launcher/releases/latest). Linux comes as AppImage, tar.gz and Flatpak.
+1. Download it from the [latest release](https://github.com/anyplaynet/launcher/releases/latest). Windows comes as an installer or a single file, Linux as AppImage, tar.gz and Flatpak, and macOS (Apple silicon) as a zip.
 2. Create an account at [anyplaynet.com](https://anyplaynet.com) with a passkey or an e-mail code.
 3. Add your own game dumps. Nothing here ships or downloads game files.
 
